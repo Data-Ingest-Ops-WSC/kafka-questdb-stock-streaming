@@ -35,8 +35,8 @@ services:
           sleep 2;
         done;
         echo '✅ Kafka is ready!';
-        kafka-topics --create --if-not-exists --bootstrap-server kafka:29092 --replication-factor 1 --partitions 50 --topic acciones-ticks;
-        echo '✅ Topic acciones-ticks created (if it did not already exist)';
+        kafka-topics --create --if-not-exists --bootstrap-server kafka:29092 --replication-factor 1 --partitions 50 --topic stock-ticks;
+        echo '✅ Topic stock-ticks created (if it did not already exist)';
       "
 
   questdb:

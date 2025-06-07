@@ -22,6 +22,6 @@ def generate_stock(symbol):
 while True:
     symbol = random.choice(symbols)
     data = generate_stock(symbol)
-    producer.send("acciones-ticks", key=symbol, value=data)
+    producer.send("stock-ticks", key=symbol, value=data)
     print(f"Sent: {data}")
     time.sleep(0.5)
