@@ -1,0 +1,1 @@
+# kafka-questdb-stock-streaming
