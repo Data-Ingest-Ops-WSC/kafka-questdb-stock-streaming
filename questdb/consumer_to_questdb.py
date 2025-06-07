@@ -14,6 +14,9 @@ sock.connect(('localhost', 9009))
 
 for msg in consumer:
     stock = msg.value
+    partition = msg.partition
+    offset = msg.offset
+    print(f"📦 Partition {partition} | Offset {offset} | Key: {msg.key} → Stock: {stock}")
     ilp = f"stocks,symbol={stock['symbol']} price={stock['price']},volume={stock['volume']} {stock['timestamp']}000000\n"
     sock.sendall(ilp.encode('utf-8'))
     print(f"Inserted into QuestDB: {ilp.strip()}")
